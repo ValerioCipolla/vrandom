@@ -1,8 +1,8 @@
-import { coinFlip } from "./lib/coinFlip.js";
+import { flip } from "./lib/flip.js";
 import { pick } from "./lib/pick.js";
 import { int } from "./lib/int.js";
 const vrandom = {
-  coinFlip,
+  flip,
   pick,
   int,
 };

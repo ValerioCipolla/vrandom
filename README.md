@@ -3,38 +3,40 @@
 An easy-to-use library to make your life easier when working with random numbers or random choices in javascript.
 
 # Download & Usage
-Download the package from npm 
+
+Download the package from npm
 
 ```
 npm i vrandom
 ```
 
-Import the package where you need it 
+Import the package where you need it
 
 ```
-import vrandom from "vrandom" 
+import vrandom from "vrandom"
 ```
 
 Use the function you need by accessing it through the vrandom object
 
-``` 
-vrandom.coinFlip() 
+```
+vrandom.flip()
 ```
 
 # Docs
-- [coinFlip](#coinflip)
+
+- [flip](#flip)
 - [int](#int)
 - [pick](#pick)
 
-## coinFlip
-Usage: 
+## flip
+
+Usage:
 
 ```
-vrandom.coinFlip()
+vrandom.flip()
 ```
 
 It doesn't take any arguments, it returns true 50% of the time and false 50% of the time.
-
 
 ## int
 
@@ -51,29 +53,30 @@ The two arguments both HAVE to be integers and max HAS to be greater than min, o
 It returns a random integer between min an max - min INCLUDED, max EXCLUDED
 
 Example:
-``` 
+
+```
 vrandom.int(1, 10)
 ```
-Will return a random integer between 1 (included) and 10 (not-included)
 
+Will return a random integer between 1 (included) and 10 (not-included)
 
 ## pick
 
 Usage:
+
 ```
 vrandom.pick(array)
 ```
+
 It takes one argument, and it HAS to be an array, if not it will throw an error.
 
 It will return a random element from that array.
 
 Example:
 
-``` 
+```
 const arr = [1, 2, 3, 4, "hello", "world", true, false]
 vrandom.pick(arr)
 ```
 
 Will return a random element from the array 'arr'
-
-
