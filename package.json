@@ -1,8 +1,9 @@
 {
   "name": "vrandom",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

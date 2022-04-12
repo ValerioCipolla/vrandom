@@ -1,5 +1,10 @@
-function coinFlip() {
-  return Math.random() > 0.5;
-}
+import { coinFlip } from "./lib/coinFlip.js";
+import { pick } from "./lib/pick.js";
+import { randInt } from "./lib/randInt.js";
+const vrandom = {
+  coinFlip,
+  pick,
+  randInt,
+};
 
-module.exports = coinFlip;
+export default vrandom;
