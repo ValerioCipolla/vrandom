@@ -23,7 +23,7 @@ vrandom.coinFlip()
 
 # Docs
 - [coinFlip](#coinflip)
-- [randInt](#randint)
+- [int](#int)
 - [pick](#pick)
 
 ## coinFlip
@@ -36,12 +36,12 @@ vrandom.coinFlip()
 It doesn't take any arguments, it returns true 50% of the time and false 50% of the time.
 
 
-## randInt
+## int
 
 Usage:
 
 ```
-vrandom.randInt(min, max)
+vrandom.int(min, max)
 ```
 
 It takes two arguments, min and max
@@ -52,7 +52,7 @@ It returns a random integer between min an max - min INCLUDED, max EXCLUDED
 
 Example:
 ``` 
-vrandom.randInt(1, 10)
+vrandom.int(1, 10)
 ```
 Will return a random integer between 1 (included) and 10 (not-included)
 
