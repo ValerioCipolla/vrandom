@@ -1,11 +1,11 @@
 {
   "name": "vrandom",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
-  "type": "module",
+  "type":"commonjs",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

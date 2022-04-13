@@ -1,4 +1,4 @@
-import { int } from "../lib/int.js";
+const int = require("../lib/int.js")
 
 it("returns an integer between min and max, max not included", () => {
   const min = 1;
