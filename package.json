@@ -1,6 +1,6 @@
 {
   "name": "vrandom",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
   "type":"commonjs",

@@ -13,5 +13,3 @@ const vrandom = {
 };
 
 module.exports = vrandom;
-
-console.log(vrandom.float(0, 1, 5));
