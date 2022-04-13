@@ -9,6 +9,7 @@ An easy-to-use library to make your life easier when working with random numbers
 
 # Table of contents
 - [Installation & Usage](#installation--usage)
+- [Tests](#tests)
 - [Docs](#docs)
 - [Creators & Contributors](#creators--contributors)
 
@@ -36,6 +37,23 @@ Use the function you need by accessing it through the vrandom object
 
 ```
 vrandom.flip()
+```
+# Tests
+
+The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
+
+There is a CI workflow set-up that runs on every pull-request, so if tests fail it will be impossible to merge the PR.
+
+If you want to see the tests running:
+
+1. Clone the repo locally
+2. Install dependencies
+```
+npm i
+```
+3. run tests
+```
+npm t
 ```
 
 # Docs
