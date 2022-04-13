@@ -4,6 +4,7 @@
 ![](https://img.shields.io/github/forks/ValerioCipolla/vrandom?style=flat-square)
 ![](https://img.shields.io/github/stars/ValerioCipolla/vrandom?style=flat-square)
 ![](https://img.shields.io/github/license/ValerioCipolla/vrandom?style=flat-square)
+![](https://img.shields.io/badge/test--coverage-100%25-brightgreen?style=flat-square)
 
 An easy-to-use library to make your life easier when working with random numbers or random choices in javascript.
 
