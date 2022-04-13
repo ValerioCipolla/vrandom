@@ -1,6 +1,6 @@
 const float = require("../lib/float.js");
 
-const decimalCount = (num) => {
+const decimalCount = num => {
   const numStr = num.toString();
 
   if (numStr.includes(".")) {
@@ -14,6 +14,28 @@ describe("float", () => {
   it("should return a number", () => {
     expect(typeof float(0, 1)).toBe("number");
   });
+
+  it.each([
+    { mockValue: 0.5, min: 0, max: 1, decimals: 5, expected: 0.5 },
+    { mockValue: 0.45, min: 5, max: 10, decimals: 4, expected: 7.25 },
+    { mockValue: 0.912, min: 78, max: 120, decimals: 12, expected: 116.304 },
+    { mockValue: 0.004, min: 13, max: 14, decimals: 2, expected: 13 },
+    { mockValue: 0.356, min: 32, max: 53, decimals: 1, expected: 39.5 },
+    { mockValue: 0.9124, min: 10_005, max: 54_505_502, decimals: 3, expected: 49_731_696.463 },
+    { mockValue: 0.671, min: 51, max: 98, decimals: undefined, expected: 82.54 },
+  ])(
+    "float($min, $max, $decimals) should return $expected when Math.random returns $mockValue",
+    ({ mockValue, min, max, decimals, expected }) => {
+      jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
+
+      const actual = float(min, max, decimals);
+      // `toBeCloseTo` matcher is normally appropriate for comparing floats (as it handles floating point imprecision),
+      // but we might be alright here to just use `toBe`.
+      expect(actual).toBe(expected);
+
+      Math.random.mockRestore();
+    },
+  );
 
   it("should return a number between min and max", () => {
     expect(float(0, 1)).toBeGreaterThanOrEqual(0);
