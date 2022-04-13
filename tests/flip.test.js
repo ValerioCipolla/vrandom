@@ -1,4 +1,4 @@
-import { flip } from "../lib/flip.js";
+const flip = require("../lib/flip.js");
 
 it("returns a boolean", () => {
   const actual = flip();
