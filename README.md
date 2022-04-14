@@ -172,7 +172,7 @@ vrandom.shuffle(array);
 
 It takes one argument, and it HAS to be an array.
 
-It will return a new array with the same elements as the provided array, but in (possibly) a different order, every element is shuffled and is assigned a new position (the initial position of the element is included in the possible positions where the element ends up).
+It will make a shallow copy of the provided array, and return a new array with the same elements as the provided array, but in (possibly) a different order, every element is shuffled and is assigned a new position (the initial position of the element is included in the possible positions where the element ends up). The original array remains unchanged.
 
 Example:
 
@@ -181,6 +181,8 @@ const arr = [1, 2, "hello", "world", true, false];
 vrandom.shuffle(arr);
 
 // possible output: [1, "hello", true, false, 2, "world"]
+
+console.log(arr); // [1, 2, "hello", "world", true, false]
 ```
 
 # Creators & Contributors
