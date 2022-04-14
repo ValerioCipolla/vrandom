@@ -4,6 +4,8 @@ const int = require("./lib/int.js");
 const shuffle = require("./lib/shuffle.js");
 const float = require("./lib/float.js");
 const pickFromStr = require("./lib/pickFromStr.js");
+const letter = require("./lib/letter.js")
+const string = require("./lib/string.js")
 
 const vrandom = {
   flip,
@@ -12,6 +14,8 @@ const vrandom = {
   shuffle,
   float,
   pickFromStr,
+  letter,
+  string
 };
 
 module.exports = vrandom;
