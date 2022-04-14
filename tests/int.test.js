@@ -20,10 +20,10 @@ describe("int", () => {
     { mockValue: 0.999, min: 1, max: 5, expected: 5 },
   ])(
     "int($min, $max) should return $expected when Math.random returns $mockValue",
-    ({ mockValue, min, max, decimals, expected }) => {
+    ({ mockValue, min, max, expected }) => {
       jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
 
-      const actual = int(min, max, decimals);
+      const actual = int(min, max);
       expect(actual).toBe(expected);
 
       Math.random.mockRestore();
