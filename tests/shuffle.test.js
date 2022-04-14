@@ -3,12 +3,16 @@ const shuffle = require("../lib/shuffle.js");
 describe("shuffle", () => {
   it("returns array of same length of arg array", () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const actual = shuffle(array);
+    expect(typeof actual).toBe("object");
+    expect(actual.length).toBe(array.length);
+  });
 
-    const result = shuffle(array);
-
-    expect(typeof result).toBe("object");
-
-    expect(result.length).toBe(array.length);
+  it("copys array, shuffles it and returns new array leaving original array unchanged", () => {
+    const array = [1, 2, 3, 4, 5];
+    const actual = shuffle(array);
+    expect(actual).not.toBe(array);
+    expect(array).toStrictEqual([1, 2, 3, 4, 5]);
   });
 
   it.each([
