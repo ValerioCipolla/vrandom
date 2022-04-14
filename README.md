@@ -77,6 +77,7 @@ npm t
 - [pickFromStr](#pickfromstr)
 - [shuffle](#shuffle)
 - [letter](#letter)
+- [string](#string)
 
 ## flip
 
@@ -240,6 +241,33 @@ vrandom.letter();
 // possible output: "A"
 // possible output: "m"
 // possible output: "Z"
+```
+
+## string
+
+Usage:
+
+```js
+vrandom.string(size, (charset = "alphanumeric"));
+```
+
+It takes 2 arguments.
+First argument is the length of the desired output. It needs to be an integer greater than 0, or it will throw an error.
+Second argument is a string representing the type of charset that should be used to generate output. At the moment there is only 2 possible values: "alphanumeric"[0-9a-zA-Z] and "alphabetic"[a-zA-Z].
+If the second argument is omitted it will default to "alphanumeric".
+
+Example:
+
+```js
+vrandom.string(5);
+// possible output: "Zd5r3"
+
+vrandom.string(5, "alphanumeric");
+// possible output: "1zZ3L"
+
+vrandom.string(5, "alphabetic");
+// possible output: "LzkAm"
+// non-possible output: "1oLL4"
 ```
 
 # Creators & Contributors
