@@ -31,20 +31,8 @@ describe("int", () => {
   );
 
   it.each([
-    {
-      mockValue: 0.999,
-      min: 0,
-      max: 3,
-      inclusive: false,
-      expected: 2,
-    },
-    {
-      mockValue: 0.999,
-      min: 0,
-      max: 3,
-      inclusive: true,
-      expected: 3,
-    },
+    { mockValue: 0.999, min: 0, max: 3, inclusive: false, expected: 2 },
+    { mockValue: 0.999, min: 0, max: 3, inclusive: true, expected: 3 },
     { mockValue: 0.412, min: 0, max: 3, inclusive: false, expected: 1 },
     { mockValue: 0.15029, min: 416, max: 5_905, inclusive: false, expected: 1_240 },
     { mockValue: 0.5602, min: 15, max: 67, inclusive: false, expected: 44 },
@@ -53,7 +41,7 @@ describe("int", () => {
     { mockValue: 0.9713, min: 160_590, max: 1_250_858, inclusive: false, expected: 1_219_567 },
     { mockValue: 0.999, min: 1, max: 5, inclusive: false, expected: 4 },
   ])(
-    "int($min, $max, $inclusive) should return $expected when Math.random return $mockValue",
+    "int($min, $max, $inclusive) should return $expected when Math.random returns $mockValue",
     ({ mockValue, min, max, inclusive, expected }) => {
       jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
 
@@ -74,5 +62,12 @@ describe("int", () => {
     const min = 10;
     const max = 1;
     expect(() => int(min, max)).toThrow(Error("first argument needs to be smaller than second argument"));
+  });
+
+  it("throws an error if third argument is not a boolean", () => {
+    const min = 1;
+    const max = 10;
+    const inclusive = "hello";
+    expect(() => int(min, max, inclusive)).toThrow(TypeError("Third argument needs to be a boolean"));
   });
 });
