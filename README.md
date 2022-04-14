@@ -9,6 +9,7 @@
 An easy-to-use library to make your life easier when working with random numbers or random choices in javascript.
 
 # Table of contents
+
 - [Installation & Usage](#installation--usage)
 - [Tests](#tests)
 - [Docs](#docs)
@@ -24,21 +25,22 @@ npm i vrandom
 
 Import the package where you need it (both commonjs and module syntax supported)
 
-```
-import vrandom from "vrandom"
+```js
+import vrandom from "vrandom";
 ```
 
-or 
+or
 
-```
-const vrandom = require("vrandom")
+```js
+const vrandom = require("vrandom");
 ```
 
 Use the function you need by accessing it through the vrandom object
 
+```js
+vrandom.flip();
 ```
-vrandom.flip()
-```
+
 # Tests
 
 The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
@@ -49,10 +51,13 @@ If you want to see the tests running:
 
 1. Clone the repo locally
 2. Install dependencies
+
 ```
 npm i
 ```
+
 3. run tests
+
 ```
 npm t
 ```
@@ -65,13 +70,12 @@ npm t
 - [pick](#pick)
 - [shuffle](#shuffle)
 
-
 ## flip
 
 Usage:
 
-```
-vrandom.flip()
+```js
+vrandom.flip();
 
 // possible output: true
 ```
@@ -82,8 +86,8 @@ It doesn't take any arguments, it returns true 50% of the time and false 50% of 
 
 Usage:
 
-```
-vrandom.int(min, max)
+```js
+vrandom.int(min, max);
 ```
 
 It takes two arguments, min and max
@@ -94,28 +98,27 @@ It returns a random integer between min and max - min INCLUDED, max EXCLUDED
 
 Example:
 
-```
-vrandom.int(1, 10)
+```js
+vrandom.int(1, 10);
 
-// possile output: 4
+// possible output: 4
 ```
 
 Will return a random integer between 1 (included) and 10 (not-included)
 
-## float 
+## float
 
 Usage:
 
+```js
+vrandom.float(min, max, decimals);
 ```
-vrandom.float(min,max, decimals)
-```
-
 
 It takes 2 arguments, plus 1 optional argument if only two arguments are provided the third argument defaults to 2.
 
 The first and second arguments have to be numbers (floats or ints) the third argument has to be an integer.
 
-The function will return a random floating point number between min and max - min INCLUDED, max EXCLUDED. The returned floating point number will have a maximum of 2 decimal places if no third argument is specified. 
+The function will return a random floating point number between min and max - min INCLUDED, max EXCLUDED. The returned floating point number will have a maximum of 2 decimal places if no third argument is specified.
 
 If a third argument is passed, that will be the maximum number of decimals that the returned floating point number will have. Maximum of 15.
 
@@ -125,8 +128,8 @@ The function will return an error if: less than 2 arguments are passed, the thir
 
 Example:
 
-```
-vrandom.float(0, 10, 5)
+```js
+vrandom.float(0, 10, 5);
 // possible output: 0.47185
 ```
 
@@ -134,8 +137,8 @@ vrandom.float(0, 10, 5)
 
 Usage:
 
-```
-vrandom.pick(array)
+```js
+vrandom.pick(array);
 ```
 
 It takes one argument, and it HAS to be an array, if not it will throw an error.
@@ -144,34 +147,34 @@ It will return a random element from that array.
 
 Example:
 
-```
-const arr = [1, 2, 3, 4, "hello", "world", true, false]
-vrandom.pick(arr)
+```js
+const arr = [1, 2, 3, 4, "hello", "world", true, false];
+vrandom.pick(arr);
 
 // possible output: 1
 ```
 
 Will return a random element from the array 'arr'
 
-## shuffle 
+## shuffle
 
 Usage:
 
+```js
+vrandom.shuffle(array);
 ```
-vrandom.shuffle(array)
-```
+
 It takes one argument, and it HAS to be an array.
 
 It will return a new array with the same elements as the provided array, but in (possibly) a different order, every element is shuffled and is assigned a new position (the initial position of the element is included in the possible positions where the element ends up).
 
 Example:
 
-```
-const arr = [1, 2, "hello", "world", true, false]
-vrandom.shuffle(arr)
+```js
+const arr = [1, 2, "hello", "world", true, false];
+vrandom.shuffle(arr);
 
 // possible output: [1, "hello", true, false, 2, "world"]
-
 ```
 
 # Creators & Contributors
