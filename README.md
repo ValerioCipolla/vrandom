@@ -19,7 +19,7 @@ An easy-to-use library to make your life easier when working with random numbers
 
 Install the package with npm
 
-```
+```js
 npm i vrandom
 ```
 
@@ -52,13 +52,19 @@ If you want to see the tests running:
 1. Clone the repo locally
 2. Install dependencies
 
-```
+```js
 npm i
 ```
 
-3. run tests
+3. Install jest as a dev dependency
 
+```js
+npm i -D jest
 ```
+
+4. run tests
+
+```js
 npm t
 ```
 
@@ -181,3 +187,4 @@ vrandom.shuffle(arr);
 
 - [Valerio Cipolla](https://github.com/ValerioCipolla/)
 - [kennarddh](https://github.com/kennarddh)
+- [crayola-eater](https://github.com/crayola-eater)
