@@ -39,7 +39,7 @@ describe("float", () => {
 
   it("should return a number between min and max", () => {
     expect(float(0, 1)).toBeGreaterThanOrEqual(0);
-    expect(float(0, 1)).toBeLessThanOrEqual(1);
+    expect(float(0, 1)).toBeLessThan(1);
   });
 
   it("should return a number with the specified number of decimals", () => {
