@@ -15,7 +15,11 @@ describe("pickFromStr", () => {
 
   it.each([
     { string: "h", mockValue: 0.1, expected: "h" },
+    { string: "hello", mockValue: 0.1, expected: "h" },
     { string: "hello", mockValue: 0.999, expected: "o" },
+    { string: "hello", mockValue: 0.3, expected: "e" },
+    { string: "the quick fox jumps over the lazy dog", mockValue: 0.5547, expected: "o" },
+    { string: "the quick fox jumps over the lazy dog", mockValue: 0.93526, expected: "d" },
   ])(
     "pickFromStr($str) should return `$expected` when Math.random returns $mockValue",
     ({ string, mockValue, expected }) => {
