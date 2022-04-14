@@ -76,6 +76,7 @@ npm t
 - [pick](#pick)
 - [pickFromStr](#pickfromstr)
 - [shuffle](#shuffle)
+- [letter](#letter)
 
 ## flip
 
@@ -110,13 +111,13 @@ It returns a random integer between min and max - max excluded IF inclusive is s
 Example:
 
 ```js
-vrandom.int(1, 10); 
+vrandom.int(1, 10);
 // will return an integer between 1 and 10 - 10 included
 // possible output: 10
 ```
 
 ```js
-vrandom.int(1, 10, false); 
+vrandom.int(1, 10, false);
 // will return an integer between 1 and 10 - 10 NOT included
 // possible output: 9
 // non-possible output: 10
@@ -218,6 +219,27 @@ vrandom.shuffle(arr);
 // possible output: [1, "hello", true, false, 2, "world"]
 
 console.log(arr); // [1, 2, "hello", "world", true, false]
+```
+
+## letter
+
+Usage:
+
+```js
+vrandom.letter();
+```
+
+It doesn't take any arguments, it returns a random letter from the english alphabet.
+The returned letter can be lowercase OR uppercase.
+
+Example:
+
+```js
+vrandom.letter();
+// possible output: "a"
+// possible output: "A"
+// possible output: "m"
+// possible output: "Z"
 ```
 
 # Creators & Contributors
