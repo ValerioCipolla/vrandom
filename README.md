@@ -94,24 +94,33 @@ It doesn't take any arguments, it returns true 50% of the time and false 50% of 
 Usage:
 
 ```js
-vrandom.int(min, max);
+vrandom.int(min, max, (inclusive = true));
 ```
 
-It takes two arguments, min and max
+It takes three arguments: min, max and inclusive
 
-The two arguments both HAVE to be integers and max HAS to be greater than min, or it will throw an error.
+If no third argument is provided inclusive defaults to true.
 
-It returns a random integer between min and max - min INCLUDED, max EXCLUDED
+The first two arguments both HAVE to be integers and max HAS to be greater than min, or it will throw an error.
+
+It returns a random integer between min and max - min and max included IF inclusive is set to true (or not provided).
+
+It returns a random integer between min and max - max excluded IF inclusive is set to false.
 
 Example:
 
 ```js
-vrandom.int(1, 10);
-
-// possible output: 4
+vrandom.int(1, 10); 
+// will return an integer between 1 and 10 - 10 included
+// possible output: 10
 ```
 
-Will return a random integer between 1 (included) and 10 (not-included)
+```js
+vrandom.int(1, 10, false); 
+// will return an integer between 1 and 10 - 10 NOT included
+// possible output: 9
+// non-possible output: 10
+```
 
 ## float
 
