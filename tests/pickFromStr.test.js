@@ -13,7 +13,10 @@ describe("pickFromStr", () => {
     expect(actual).toBe(expected);
   });
 
-  it.each([{ string: "h", mockValue: 0.1, expected: "h" }])(
+  it.each([
+    { string: "h", mockValue: 0.1, expected: "h" },
+    { string: "hello", mockValue: 0.999, expected: "o" },
+  ])(
     "pickFromStr($str) should return `$expected` when Math.random returns $mockValue",
     ({ string, mockValue, expected }) => {
       jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
