@@ -74,6 +74,7 @@ npm t
 - [int](#int)
 - [float](#float)
 - [pick](#pick)
+- [pickFromStr](#pickfromstr)
 - [shuffle](#shuffle)
 
 ## flip
@@ -161,6 +162,31 @@ vrandom.pick(arr);
 ```
 
 Will return a random element from the array 'arr'
+
+## pickFromStr
+
+Usage:
+
+```js
+vrandom.pickFromStr(string);
+```
+
+Same as pick, but it takes a string as an argument and returns a random character from that string.
+
+Takes 1 argument, and it needs to be a string, or it will throw an error.
+
+If provided string is empty, it will return an empty string.
+
+Example:
+
+```js
+const string = "hello";
+vrandom.pickFromStr(string);
+
+// possible output: "e"
+```
+
+Returns random character from a string.
 
 ## shuffle
 
