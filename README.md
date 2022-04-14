@@ -253,7 +253,11 @@ vrandom.string(size, (charset = "alphanumeric"));
 
 It takes 2 arguments.
 First argument is the length of the desired output. It needs to be an integer greater than 0, or it will throw an error.
-Second argument is a string representing the type of charset that should be used to generate output. At the moment there is only 2 possible values: "alphanumeric"[0-9a-zA-Z] and "alphabetic"[a-zA-Z].
+Second argument is a string representing the type of charset that should be used to generate output. At the moment there is only 2 possible values:
+
+- "alphanumeric" [0-9a-zA-Z]
+- "alphabetic" [a-zA-Z]
+
 If the second argument is omitted it will default to "alphanumeric".
 
 Example:
