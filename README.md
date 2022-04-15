@@ -78,6 +78,8 @@ npm t
 - [shuffle](#shuffle)
 - [letter](#letter)
 - [string](#string)
+- [uppercaseLetter](#uppercaseLetter)
+- [lowercaseLetter](#lowercaseLetter)
 
 ## flip
 
@@ -272,6 +274,51 @@ vrandom.string(5, "alphanumeric");
 vrandom.string(5, "alphabetic");
 // possible output: "LzkAm"
 // non-possible output: "1oLL4"
+```
+
+## uppercaseLetter
+
+
+Usage:
+
+```js
+vrandom.uppercaseLetter();
+```
+
+
+It doesn't take any arguments, it returns a random uppercase letter from the english alphabet.
+
+
+Example:
+
+```js
+vrandom.uppercaseLetter();
+// possible output: "A"
+// possible output: "M"
+// possible output: "Z"
+```
+
+
+## lowercaseLetter
+
+
+Usage:
+
+```js
+vrandom.lowercaseLetter();
+```
+
+
+It doesn't take any arguments, it returns a random lowercase letter from the english alphabet.
+
+
+Example:
+
+```js
+vrandom.lowercaseLetter();
+// possible output: "a"
+// possible output: "m"
+// possible output: "z"
 ```
 
 # Creators & Contributors
