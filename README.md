@@ -76,8 +76,8 @@ npm t
 - [pick](#pick)
 - [pickFromStr](#pickfromstr)
 - [shuffle](#shuffle)
-- [letter](#letter)
 - [string](#string)
+- [letter](#letter)
 - [uppercaseLetter](#uppercaseLetter)
 - [lowercaseLetter](#lowercaseLetter)
 
@@ -98,7 +98,7 @@ It doesn't take any arguments, it returns true 50% of the time and false 50% of 
 Usage:
 
 ```js
-vrandom.int(min, max, (inclusive = true));
+vrandom.int(min, max, ?inclusive = true);
 ```
 
 It takes three arguments: min, max and inclusive
@@ -131,14 +131,14 @@ vrandom.int(1, 10, false);
 Usage:
 
 ```js
-vrandom.float(min, max, decimals);
+vrandom.float(min, max, ?decimals = 2);
 ```
 
 It takes 2 arguments, plus 1 optional argument if only two arguments are provided the third argument defaults to 2.
 
 The first and second arguments have to be numbers (floats or ints) the third argument has to be an integer.
 
-The function will return a random floating point number between min and max - min INCLUDED, max EXCLUDED. The returned floating point number will have a maximum of 2 decimal places if no third argument is specified.
+The function will return a random floating point number between min and max - min and max INCLUDED. The returned floating point number will have a maximum of 2 decimal places if no third argument is specified.
 
 If a third argument is passed, that will be the maximum number of decimals that the returned floating point number will have. Maximum of 15.
 
@@ -149,8 +149,10 @@ The function will return an error if: less than 2 arguments are passed, the thir
 Example:
 
 ```js
-vrandom.float(0, 10, 5);
-// possible output: 0.47185
+vrandom.float(0.5, 10.1, 5);
+// possible output: 2.47185
+// possible output: 10.1
+// possible output: 0.5427
 ```
 
 ## pick
@@ -224,33 +226,12 @@ vrandom.shuffle(arr);
 console.log(arr); // [1, 2, "hello", "world", true, false]
 ```
 
-## letter
-
-Usage:
-
-```js
-vrandom.letter();
-```
-
-It doesn't take any arguments, it returns a random letter from the english alphabet.
-The returned letter can be lowercase OR uppercase.
-
-Example:
-
-```js
-vrandom.letter();
-// possible output: "a"
-// possible output: "A"
-// possible output: "m"
-// possible output: "Z"
-```
-
 ## string
 
 Usage:
 
 ```js
-vrandom.string(size, (charset = "alphanumeric"));
+vrandom.string(size, ?charset = "alphanumeric");
 ```
 
 It takes 2 arguments.
@@ -276,8 +257,28 @@ vrandom.string(5, "alphabetic");
 // non-possible output: "1oLL4"
 ```
 
-## uppercaseLetter
+## letter
 
+Usage:
+
+```js
+vrandom.letter();
+```
+
+It doesn't take any arguments, it returns a random letter from the english alphabet.
+The returned letter can be lowercase OR uppercase.
+
+Example:
+
+```js
+vrandom.letter();
+// possible output: "a"
+// possible output: "A"
+// possible output: "m"
+// possible output: "Z"
+```
+
+## uppercaseLetter
 
 Usage:
 
@@ -285,9 +286,7 @@ Usage:
 vrandom.uppercaseLetter();
 ```
 
-
 It doesn't take any arguments, it returns a random uppercase letter from the english alphabet.
-
 
 Example:
 
@@ -298,9 +297,7 @@ vrandom.uppercaseLetter();
 // possible output: "Z"
 ```
 
-
 ## lowercaseLetter
-
 
 Usage:
 
@@ -308,9 +305,7 @@ Usage:
 vrandom.lowercaseLetter();
 ```
 
-
 It doesn't take any arguments, it returns a random lowercase letter from the english alphabet.
-
 
 Example:
 
