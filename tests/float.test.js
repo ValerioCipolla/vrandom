@@ -38,8 +38,12 @@ describe("float", () => {
   );
 
   it("should return a number between min and max", () => {
-    expect(float(0, 1)).toBeGreaterThanOrEqual(0);
-    expect(float(0, 1)).toBeLessThan(1);
+    const min = 0;
+    const max = 1;
+    for (let i = 0; i < 1000; i++) {
+      expect(float(min, max)).toBeGreaterThanOrEqual(min);
+      expect(float(min, max)).toBeLessThanOrEqual(max);
+    }
   });
 
   it("should return a number with the specified number of decimals", () => {
