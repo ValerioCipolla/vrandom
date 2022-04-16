@@ -4,8 +4,10 @@ const int = require("./lib/int.js");
 const shuffle = require("./lib/shuffle.js");
 const float = require("./lib/float.js");
 const pickFromStr = require("./lib/pickFromStr.js");
-const letter = require("./lib/letter.js")
-const string = require("./lib/string.js")
+const letter = require("./lib/letter.js");
+const string = require("./lib/string.js");
+const lowercaseLetter = require("./lib/lowercaseLetter.js");
+const uppercaseLetter = require("./lib/uppercaseLetter.js");
 
 const vrandom = {
   flip,
@@ -15,7 +17,9 @@ const vrandom = {
   float,
   pickFromStr,
   letter,
-  string
+  string,
+  lowercaseLetter,
+  uppercaseLetter,
 };
 
 module.exports = vrandom;
