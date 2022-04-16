@@ -56,16 +56,16 @@ If you want to see the tests running:
 npm i
 ```
 
-3. Install jest as a dev dependency
-
-```js
-npm i -D jest
-```
-
-4. run tests
+3. run tests
 
 ```js
 npm t
+```
+
+4. run tests and see test coverage
+
+```js
+npm run test-coverage
 ```
 
 # Docs
