@@ -79,4 +79,37 @@ describe("words", () => {
       expect(w).toBe(w[0].toUpperCase() + w.slice(1).toLowerCase());
     });
   });
+
+  it.each([
+    { size: 2, format: "lowercase", mockValues: [0.00001, 0.99999], expected: ["ability", "zulu"] },
+    {
+      size: 5,
+      format: "uppercase",
+      mockValues: [0.2, 0.5, 0.3, 0.4, 0.9],
+      expected: ["CURRENT", "MAIN", "FARM", "HEIGHT", "TOOK"],
+    },
+    {
+      size: 5,
+      format: "lowercase",
+      mockValues: [0.2, 0.5, 0.3, 0.4, 0.9],
+      expected: ["current", "main", "farm", "height", "took"],
+    },
+    {
+      size: 5,
+      format: "capitalized",
+      mockValues: [0.2, 0.5, 0.3, 0.4, 0.9],
+      expected: ["Current", "Main", "Farm", "Height", "Took"],
+    },
+  ])(
+    "words($size, $format) should return $expected when Math.random returns $mockValues individually",
+    ({ size, format, mockValues, expected }) => {
+      mockValues.forEach(mockValue => {
+        jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
+      });
+      const actual = words(size, format);
+      expect(actual).toStrictEqual(expected);
+
+      Math.random.mockRestore();
+    },
+  );
 });
