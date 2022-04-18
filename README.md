@@ -77,6 +77,7 @@ npm run test-coverage
 - [pickFromStr](#pickfromstr)
 - [shuffle](#shuffle)
 - [string](#string)
+- [words](#words)
 - [letter](#letter)
 - [uppercaseLetter](#uppercaseLetter)
 - [lowercaseLetter](#lowercaseLetter)
@@ -255,6 +256,44 @@ vrandom.string(5, "alphanumeric");
 vrandom.string(5, "alphabetic");
 // possible output: "LzkAm"
 // non-possible output: "1oLL4"
+```
+
+## words
+
+Usage:
+
+```js
+vrandom.words(size, ?format = "lowercase")
+```
+
+Takes 2 arguments, it return an array of random words.
+
+First argument is the size of the array that will be returned (the number of random words in the output). It needs to be a positive integer, or it will throw an error.
+
+Second argument is optional (it will default to "lowercase" if not passed in).
+It's the desired format of the individual strings in the returned array.
+At the moment there is possible options:
+
+- "lowercase"
+- "uppercase"
+- "capitalized"
+
+If the second argument is passed in, but it doesn't match any of the possible options, it will throw an error.
+
+Example:
+
+```js
+vrandom.words(5);
+// possible output: ["ability", "main", "farm", "took", "current"]
+
+vrandom.words(5, "lowercase");
+// possible output: ["ability", "main", "farm", "took", "current"]
+
+vrandom.words(5, "uppercase");
+// possible output: ["ABILITY", "MAIN", "FARM", "TOOK", "CURRENT"]
+
+vrandom.words(5, "capitalized");
+// possible output: ["Ability", "Main", "Farm", "Took", "Current"]
 ```
 
 ## letter

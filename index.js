@@ -8,6 +8,7 @@ const letter = require("./lib/letter.js");
 const string = require("./lib/string.js");
 const lowercaseLetter = require("./lib/lowercaseLetter.js");
 const uppercaseLetter = require("./lib/uppercaseLetter.js");
+const words = require("./lib/words.js");
 
 const vrandom = {
   flip,
@@ -20,6 +21,7 @@ const vrandom = {
   string,
   lowercaseLetter,
   uppercaseLetter,
+  words,
 };
 
 module.exports = vrandom;
