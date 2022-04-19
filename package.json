@@ -6,7 +6,9 @@
   "type": "commonjs",
   "scripts": {
     "test": "jest",
-    "test-coverage": "npm t -- --coverage"
+    "test-coverage": "npm t -- --coverage",
+    "prettier-check": "npx prettier -c **/*.js",
+    "prettier-write": "npx prettier -w **/*.js"
   },
   "repository": {
     "type": "git",
