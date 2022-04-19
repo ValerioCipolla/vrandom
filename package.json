@@ -1,6 +1,6 @@
 {
   "name": "vrandom",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
   "type": "commonjs",
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/ValerioCipolla/vrandom.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["random", "math", "Math.random", "random-strings", "random-words", "random-choice", "random-numbers"],
+  "author": "Valerio Cipolla",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ValerioCipolla/vrandom/issues"
