@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
-  "type":"commonjs",
+  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "test-coverage": "npm t -- --coverage"
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ValerioCipolla/vrandom#readme",
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "prettier": "2.6.2"
   }
 }
