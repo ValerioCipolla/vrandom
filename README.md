@@ -5,6 +5,7 @@
 ![](https://img.shields.io/github/stars/ValerioCipolla/vrandom?style=flat-square)
 ![](https://img.shields.io/github/license/ValerioCipolla/vrandom?style=flat-square)
 ![](https://img.shields.io/badge/test--coverage-100%25-brightgreen?style=flat-square)
+![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)
 
 An easy-to-use library to make your life easier when working with random numbers or random choices in javascript.
 
@@ -43,7 +44,13 @@ vrandom.flip();
 
 # Tests
 
-The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
+The library is fully tested. If you are contributing and you are creating a new feature please add tests to it. 
+We use standardjs to keep the formatting of the code uniform across all files. 
+Every time the tests are run, the format check is run as well with the command `npx standard`. If you are trying to run the tests but it's not working, it might be because the files aren't formatted correctly. To format the files following the standard format please run 
+```
+npx standard --fix
+```
+and try running `npm t` again.
 
 There is a CI workflow set-up that runs on every pull-request, so if tests fail it will be impossible to merge the PR.
 
@@ -56,7 +63,7 @@ If you want to see the tests running:
 npm i
 ```
 
-3. run tests
+3. run tests and format check
 
 ```js
 npm t
