@@ -1,10 +1,10 @@
-const flip = require("../lib/flip.js");
+const flip = require('../lib/flip.js')
 
-describe("flip", () => {
-  it("returns a boolean", () => {
-    const actual = flip();
-    expect(typeof actual).toBe("boolean");
-  });
+describe('flip', () => {
+  it('returns a boolean', () => {
+    const actual = flip()
+    expect(typeof actual).toBe('boolean')
+  })
 
   it.each([
     [false, 0],
@@ -27,13 +27,13 @@ describe("flip", () => {
     [true, 0.8],
     [true, 0.8235235],
     [true, 0.9000004],
-    [true, 0.9999999999999999],
-  ])("flip() should return %s when Math.random returns %f", (expected, mockValue) => {
-    jest.spyOn(Math, "random").mockReturnValueOnce(mockValue);
+    [true, 0.9999999999999999]
+  ])('flip() should return %s when Math.random returns %f', (expected, mockValue) => {
+    jest.spyOn(Math, 'random').mockReturnValueOnce(mockValue)
 
-    const actual = flip();
-    expect(actual).toBe(expected);
+    const actual = flip()
+    expect(actual).toBe(expected)
 
-    Math.random.mockRestore();
-  });
-});
+    Math.random.mockRestore()
+  })
+})

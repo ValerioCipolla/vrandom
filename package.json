@@ -5,14 +5,22 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "jest",
+    "test": "npx standard && jest",
     "test-coverage": "npm t -- --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ValerioCipolla/vrandom.git"
   },
-  "keywords": ["random", "math", "Math.random", "random-strings", "random-words", "random-choice", "random-numbers"],
+  "keywords": [
+    "random",
+    "math",
+    "Math.random",
+    "random-strings",
+    "random-words",
+    "random-choice",
+    "random-numbers"
+  ],
   "author": "Valerio Cipolla",
   "license": "ISC",
   "bugs": {
@@ -21,6 +29,9 @@
   "homepage": "https://github.com/ValerioCipolla/vrandom#readme",
   "devDependencies": {
     "jest": "^27.5.1",
-    "prettier": "2.6.2"
+    "standard": "^16.0.4"
+  },
+  "standard": {
+    "env": [ "jest" ]
   }
 }
