@@ -1,12 +1,13 @@
 {
   "name": "vrandom",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "an easy way to work with random numbers in javascript",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
     "test": "npx standard && jest",
-    "test-coverage": "npm t -- --coverage"
+    "test-coverage": "npm t -- --coverage",
+    "standard-fix": "npx standard --fix"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
     "standard": "^16.0.4"
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   }
 }
