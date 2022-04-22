@@ -27,32 +27,45 @@ npm i vrandom
 Import the package where you need it (both commonjs and module syntax supported)
 
 ```js
-import vrandom from "vrandom";
+import vrandom from "vrandom"
 ```
 
 or
 
 ```js
-const vrandom = require("vrandom");
+const vrandom = require("vrandom")
 ```
 
 Use the function you need by accessing it through the vrandom object
 
 ```js
-vrandom.flip();
+vrandom.flip()
 ```
 
 # Tests
 
-The library is fully tested. If you are contributing and you are creating a new feature please add tests to it. 
-We use standardjs to keep the formatting of the code uniform across all files. 
-Every time the tests are run, the format check is run as well with the command `npx standard`. If you are trying to run the tests but it's not working, it might be because the files aren't formatted correctly. To format the files following the standard format please run 
-```
-npx standard --fix
-```
-and try running `npm t` again.
+The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
+We use standardjs to keep the formatting of the code uniform across all files.
+On every Pull Request two GitHub actions will run.
+1. Check the format of all js files
+2. Check if all tests pass
 
-There is a CI workflow set-up that runs on every pull-request, so if tests fail it will be impossible to merge the PR.
+If the files aren't formatted correctly or some of the tests don't pass, the merge won't be allowed.
+
+To check if your files have the right format run
+
+```
+npm run lint
+```
+
+If nothing comes back it means you are good to go.
+If some of your files don't have the right format, run
+
+```
+npm run lint-fix
+```
+
+and standardjs will format them for you.
 
 If you want to see the tests running:
 
@@ -63,7 +76,7 @@ If you want to see the tests running:
 npm i
 ```
 
-3. run tests and format check
+3. run tests
 
 ```js
 npm t
@@ -74,6 +87,8 @@ npm t
 ```js
 npm run test-coverage
 ```
+
+If all tests are passing, and you have run `npm run lint-fix` to make sure your files are formatted correctly, then push your PR up for review.
 
 # Docs
 
@@ -94,7 +109,7 @@ npm run test-coverage
 Usage:
 
 ```js
-vrandom.flip();
+vrandom.flip()
 
 // possible output: true
 ```
@@ -122,13 +137,13 @@ It returns a random integer between min and max - max excluded IF inclusive is s
 Example:
 
 ```js
-vrandom.int(1, 10);
+vrandom.int(1, 10)
 // will return an integer between 1 and 10 - 10 included
 // possible output: 10
 ```
 
 ```js
-vrandom.int(1, 10, false);
+vrandom.int(1, 10, false)
 // will return an integer between 1 and 10 - 10 NOT included
 // possible output: 9
 // non-possible output: 10
@@ -157,7 +172,7 @@ The function will return an error if: less than 2 arguments are passed, the thir
 Example:
 
 ```js
-vrandom.float(0.5, 10.1, 5);
+vrandom.float(0.5, 10.1, 5)
 // possible output: 2.47185
 // possible output: 10.1
 // possible output: 0.5427
@@ -168,7 +183,7 @@ vrandom.float(0.5, 10.1, 5);
 Usage:
 
 ```js
-vrandom.pick(array);
+vrandom.pick(array)
 ```
 
 It takes one argument, and it HAS to be an array, if not it will throw an error.
@@ -178,8 +193,8 @@ It will return a random element from that array.
 Example:
 
 ```js
-const arr = [1, 2, 3, 4, "hello", "world", true, false];
-vrandom.pick(arr);
+const arr = [1, 2, 3, 4, "hello", "world", true, false]
+vrandom.pick(arr)
 
 // possible output: 1
 ```
@@ -191,7 +206,7 @@ Will return a random element from the array 'arr'
 Usage:
 
 ```js
-vrandom.pickFromStr(string);
+vrandom.pickFromStr(string)
 ```
 
 Same as pick, but it takes a string as an argument and returns a random character from that string.
@@ -203,8 +218,8 @@ If provided string is empty, it will return an empty string.
 Example:
 
 ```js
-const string = "hello";
-vrandom.pickFromStr(string);
+const string = "hello"
+vrandom.pickFromStr(string)
 
 // possible output: "e"
 ```
@@ -216,7 +231,7 @@ Returns random character from a string.
 Usage:
 
 ```js
-vrandom.shuffle(array);
+vrandom.shuffle(array)
 ```
 
 It takes one argument, and it HAS to be an array.
@@ -226,12 +241,12 @@ It will make a shallow copy of the provided array, and return a new array with t
 Example:
 
 ```js
-const arr = [1, 2, "hello", "world", true, false];
-vrandom.shuffle(arr);
+const arr = [1, 2, "hello", "world", true, false]
+vrandom.shuffle(arr)
 
 // possible output: [1, "hello", true, false, 2, "world"]
 
-console.log(arr); // [1, 2, "hello", "world", true, false]
+console.log(arr) // [1, 2, "hello", "world", true, false]
 ```
 
 ## string
@@ -254,13 +269,13 @@ If the second argument is omitted it will default to "alphanumeric".
 Example:
 
 ```js
-vrandom.string(5);
+vrandom.string(5)
 // possible output: "Zd5r3"
 
-vrandom.string(5, "alphanumeric");
+vrandom.string(5, "alphanumeric")
 // possible output: "1zZ3L"
 
-vrandom.string(5, "alphabetic");
+vrandom.string(5, "alphabetic")
 // possible output: "LzkAm"
 // non-possible output: "1oLL4"
 ```
@@ -290,16 +305,16 @@ If the second argument is passed in, but it doesn't match any of the possible op
 Example:
 
 ```js
-vrandom.words(5);
+vrandom.words(5)
 // possible output: ["ability", "main", "farm", "took", "current"]
 
-vrandom.words(5, "lowercase");
+vrandom.words(5, "lowercase")
 // possible output: ["ability", "main", "farm", "took", "current"]
 
-vrandom.words(5, "uppercase");
+vrandom.words(5, "uppercase")
 // possible output: ["ABILITY", "MAIN", "FARM", "TOOK", "CURRENT"]
 
-vrandom.words(5, "capitalized");
+vrandom.words(5, "capitalized")
 // possible output: ["Ability", "Main", "Farm", "Took", "Current"]
 ```
 
@@ -308,7 +323,7 @@ vrandom.words(5, "capitalized");
 Usage:
 
 ```js
-vrandom.letter();
+vrandom.letter()
 ```
 
 It doesn't take any arguments, it returns a random letter from the english alphabet.
@@ -317,7 +332,7 @@ The returned letter can be lowercase OR uppercase.
 Example:
 
 ```js
-vrandom.letter();
+vrandom.letter()
 // possible output: "a"
 // possible output: "A"
 // possible output: "m"
@@ -329,7 +344,7 @@ vrandom.letter();
 Usage:
 
 ```js
-vrandom.uppercaseLetter();
+vrandom.uppercaseLetter()
 ```
 
 It doesn't take any arguments, it returns a random uppercase letter from the english alphabet.
@@ -337,7 +352,7 @@ It doesn't take any arguments, it returns a random uppercase letter from the eng
 Example:
 
 ```js
-vrandom.uppercaseLetter();
+vrandom.uppercaseLetter()
 // possible output: "A"
 // possible output: "M"
 // possible output: "Z"
@@ -348,7 +363,7 @@ vrandom.uppercaseLetter();
 Usage:
 
 ```js
-vrandom.lowercaseLetter();
+vrandom.lowercaseLetter()
 ```
 
 It doesn't take any arguments, it returns a random lowercase letter from the english alphabet.
@@ -356,7 +371,7 @@ It doesn't take any arguments, it returns a random lowercase letter from the eng
 Example:
 
 ```js
-vrandom.lowercaseLetter();
+vrandom.lowercaseLetter()
 // possible output: "a"
 // possible output: "m"
 // possible output: "z"
