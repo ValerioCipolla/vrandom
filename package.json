@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "npx standard && jest",
+    "test": "jest",
     "test-coverage": "npm t -- --coverage",
-    "standard-fix": "npx standard --fix"
+    "lint": "npx standard",
+    "lint-fix": "npx standard --fix"
   },
   "repository": {
     "type": "git",
