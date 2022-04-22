@@ -12,8 +12,9 @@ An easy-to-use library to make your life easier when working with random numbers
 # Table of contents
 
 - [Installation & Usage](#installation--usage)
-- [Tests](#tests)
 - [Docs](#docs)
+- [Tests](#tests)
+- [Contributing to vrandom](#contributing-to-vrandom)
 - [Creators & Contributors](#creators--contributors)
 
 # Installation & Usage
@@ -41,55 +42,6 @@ Use the function you need by accessing it through the vrandom object
 ```js
 vrandom.flip()
 ```
-
-# Tests
-
-The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
-We use standardjs to keep the formatting of the code uniform across all files.
-On every Pull Request two GitHub actions will run.
-1. Check the format of all js files
-2. Check if all tests pass
-
-If the files aren't formatted correctly or some of the tests don't pass, the merge won't be allowed.
-
-To check if your files have the right format run
-
-```
-npm run lint
-```
-
-If nothing comes back it means you are good to go.
-If some of your files don't have the right format, run
-
-```
-npm run lint-fix
-```
-
-and standardjs will format them for you.
-
-If you want to see the tests running:
-
-1. Clone the repo locally
-2. Install dependencies
-
-```js
-npm i
-```
-
-3. run tests
-
-```js
-npm t
-```
-
-4. run tests and see test coverage
-
-```js
-npm run test-coverage
-```
-
-If all tests are passing, and you have run `npm run lint-fix` to make sure your files are formatted correctly, then push your PR up for review.
-
 # Docs
 
 - [flip](#flip)
@@ -101,8 +53,8 @@ If all tests are passing, and you have run `npm run lint-fix` to make sure your 
 - [string](#string)
 - [words](#words)
 - [letter](#letter)
-- [uppercaseLetter](#uppercaseLetter)
-- [lowercaseLetter](#lowercaseLetter)
+- [uppercaseLetter](#uppercaseletter)
+- [lowercaseLetter](#lowercaseletter)
 
 ## flip
 
@@ -376,6 +328,57 @@ vrandom.lowercaseLetter()
 // possible output: "m"
 // possible output: "z"
 ```
+# Tests
+
+The library is fully tested. If you are contributing and you are creating a new feature please add tests to it.
+
+How to run tests:
+
+1. Clone the repo locally
+2. Install dependencies
+
+```
+npm i
+```
+
+3. run tests
+
+```
+npm t
+```
+
+4. run tests and see test coverage
+
+```
+npm run test-coverage
+```
+
+# Contributing to vrandom
+
+Steps to contributing:
+
+1. Fork the repo and create your branch from master.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes `npm t`
+5. Make sure your code lints `npm run lint`
+6. Issue pull request
+
+The library is fully tested and uses standardjs to format javascript files.
+
+On every pull request two GitHub actions will run:
+- Checks if all tests pass
+- Checks if js files are formatted correctly
+
+If any of those two Actions fail, the merge won't be possible.
+
+If you want to check if your tests pass run `npm t` 
+
+If you want to check if your files have the right formatting run `npm run lint`
+
+If your files aren't formatted correctly run `npm run lint-fix` and standardjs will do the job for you.
+
+Now you are ready to issue that pull request.
 
 # Creators & Contributors
 
